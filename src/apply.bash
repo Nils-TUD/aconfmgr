@@ -134,6 +134,16 @@ function AconfApply() {
 	LogLeave # Installing priority files
 
 	#
+	# Sync database (e.g., a repository was added to pacman.conf)
+	#
+
+	LogEnter 'Synchronizing database...\n'
+
+	sudo $PACMAN --sync --refresh
+
+	LogLeave
+
+	#
 	# Apply packages
 	#
 
